@@ -1,0 +1,122 @@
+[
+  {
+    "albumName": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": 1977,
+    "status": "Active",
+    "inventory": "12 Stock / 3 Variants",
+    "incoming": 45,
+    "price": "£40",
+    "sold": 15,
+    "estimatedProfit": "£60",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Future Nostalgia",
+    "artist": "Dua Lipa",
+    "year": 2020,
+    "status": "Out of Stock",
+    "inventory": "0 Stock / 1 Variants",
+    "incoming": 0,
+    "price": "£29",
+    "sold": 5,
+    "estimatedProfit": "£14.5",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Actually",
+    "artist": "Pet Shop Boys",
+    "year": 1987,
+    "status": "Active",
+    "inventory": "25 Stock / 2 Variants",
+    "incoming": 0,
+    "price": "£25",
+    "sold": 7,
+    "estimatedProfit": "£17.5",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Back to Black",
+    "artist": "Amy Winehouse",
+    "year": 2006,
+    "status": "On Hold",
+    "inventory": "3 Stock / 4 Variants",
+    "incoming": 19,
+    "price": "£33",
+    "sold": 39,
+    "estimatedProfit": "£128.7",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "In A Dream",
+    "artist": "Troye Sivan",
+    "year": 2020,
+    "status": "Out of Stock",
+    "inventory": "0 Stock / 2 Variants",
+    "incoming": 0,
+    "price": "£35",
+    "sold": 10,
+    "estimatedProfit": "£35",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "21",
+    "artist": "Adele",
+    "year": 2011,
+    "status": "Active",
+    "inventory": "5 Stock / 2 Variants",
+    "incoming": 10,
+    "price": "£28",
+    "sold": 4,
+    "estimatedProfit": "£11.2",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Anti",
+    "artist": "Rihanna",
+    "year": 2016,
+    "status": "Active",
+    "inventory": "10 Stock / 1 Variants",
+    "incoming": 23,
+    "price": "£29",
+    "sold": 19,
+    "estimatedProfit": "£55.1",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Hunting High and Low",
+    "artist": "a-ha",
+    "year": 1985,
+    "status": "Out of Stock",
+    "inventory": "0 Stock / 1 Variants",
+    "incoming": 5,
+    "price": "£20",
+    "sold": 25,
+    "estimatedProfit": "£50",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "Blue",
+    "artist": "Joni Mitchell",
+    "year": 1971,
+    "status": "Out of Stock",
+    "inventory": "0 Stock / 1 Variants",
+    "incoming": 0,
+    "price": "£31",
+    "sold": 20,
+    "estimatedProfit": "£62",
+    "actions": "Hold Selling"
+  },
+  {
+    "albumName": "The Marshall Mathers",
+    "artist": "Eminem",
+    "year": 2000,
+    "status": "Out of Stock",
+    "inventory": "0 Stock / 1 Variants",
+    "incoming": 5,
+    "price": "£25",
+    "sold": 7,
+    "estimatedProfit": "£17.5",
+    "actions": "Hold Selling"
+  }
+]
