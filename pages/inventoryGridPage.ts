@@ -1,10 +1,12 @@
 import { Locator, Page } from "@playwright/test";
 import { Product } from "../types/Product";
+import { mkdirSync, writeFileSync } from "fs";
+import { join } from "path";
 
 export class InventoryGridPage {
 
     readonly page: Page;
-    readonly productsDetails: Product[] = [];
+    readonly albumsDetails: Product[] = [];
     readonly albumNameLocator: Locator;
     readonly artistLocator: Locator;
     readonly yearLocator: Locator;
@@ -15,6 +17,7 @@ export class InventoryGridPage {
     readonly albumSoldLocator: Locator;
     readonly estimatedProfitLocator: Locator;
     readonly actionsLocator: Locator;
+    readonly albumRows : Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -28,14 +31,14 @@ export class InventoryGridPage {
         this.albumSoldLocator = page.locator('[col-id="sold"]');
         this.estimatedProfitLocator = page.locator('[col-id="profit"]');
         this.actionsLocator = page.locator('[col-id="actions"]');
+        this.albumRows = page.locator('.ag-center-cols-container').getByRole('row');
     }
 
     async getAlbumDetails(): Promise<string> {
-        const rows = this.page.locator('.ag-center-cols-container').getByRole('row');
-        const rowsCount = await rows.count();
+        const albumRowsCount = await this.albumRows.count();
 
-        for (let i = 1; i <= rowsCount; i++) {
-            this.productsDetails.push({
+        for (let i = 1; i <= albumRowsCount; i++) {
+            this.albumsDetails.push({
                 albumName: await this.albumNameLocator.nth(i-1).textContent() ?? '',
                 artist: await this.artistLocator.nth(i).textContent() ?? '',
                 year: Number(await this.yearLocator.nth(i).textContent()) ?? 0,
@@ -48,7 +51,14 @@ export class InventoryGridPage {
                 actions: await this.actionsLocator.nth(i).textContent() ?? ''
             })
         }
-        return JSON.stringify(this.productsDetails, null, 2);
+        return JSON.stringify(this.albumsDetails, null, 2);
+    }
+
+    async storeAlbumDetails(albumsDetails : string): Promise<void> {
+        const dirPath : string = 'test-data';
+        const filePath: string = join(dirPath, 'album-details.json');
+        mkdirSync(dirPath, { recursive: true });
+        writeFileSync(filePath, albumsDetails);
     }
 
 
