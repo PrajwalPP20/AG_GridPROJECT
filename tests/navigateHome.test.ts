@@ -8,8 +8,8 @@ import { AppDemosPage } from '../pages/appDemosPage';
 test.describe('AG Grid Homepage Navigation', () => {
   test('should navigate to inventory page', async ({ page }) => {
     const basePage = new BasePage(page);
-    await basePage.navigate('/');
-    await expect(page).toHaveTitle(/AG Grid/);
+    await basePage.navigateToBaseUrl('/');
+    await basePage.verifyPageTitle();
     const appHomePage = new AppHomePage(page);
     await appHomePage.demosModuleLink.click();
     const appDemosPage = new AppDemosPage(page);

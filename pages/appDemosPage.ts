@@ -14,7 +14,7 @@ export class AppDemosPage {
 
     async goToInventoryPage() {
         const basePage = new BasePage(this.page);
-              await basePage.navigate('/');
+              await basePage.navigateToBaseUrl('/');
               const appHomePage = new AppHomePage(this.page);
               await appHomePage.demosModuleLink.click();
               const appDemosPage = new AppDemosPage(this.page);
