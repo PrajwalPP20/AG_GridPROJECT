@@ -7,8 +7,8 @@ export class BasePage {
     this.page = page;
   }
 
-  async navigateToBaseUrl(url: string) {
-    await this.page.goto(url);
+  async navigateToBaseUrl() {
+    await this.page.goto('/');
   }
 
   async verifyPageTitle() {
