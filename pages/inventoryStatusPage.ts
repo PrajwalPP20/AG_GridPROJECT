@@ -11,4 +11,8 @@ export class InventoryStatusPage {
         this.inventoryAciveStatusButton = page.getByRole('button', { name: 'Active' });
         this.inventoryOnHoldStatusButton = page.getByRole('button', { name: 'On Hold' });
     }
+
+    async selectStatus(status: string) {
+        await this.page.getByRole('button', { name: status }).click();
+    }
 }
