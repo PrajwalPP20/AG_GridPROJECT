@@ -19,7 +19,6 @@ export class AppDemosPage {
               await appHomePage.demosModuleLink.click();
               const appDemosPage = new AppDemosPage(this.page);
               await appDemosPage.inventoryLink.click();
-              await this.page.waitForLoadState('networkidle');
     }
 
   
