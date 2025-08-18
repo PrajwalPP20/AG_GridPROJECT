@@ -15,6 +15,7 @@ export class InventoryGridPage {
     readonly estimatedProfitLocator: Locator;
     readonly actionsLocator: Locator;
     readonly albumRows: Locator;
+    readonly statusFilterDropdown: Locator;  
 
     constructor(page: Page) {
         this.page = page;
@@ -29,6 +30,8 @@ export class InventoryGridPage {
         this.estimatedProfitLocator = page.locator('[col-id="profit"]');
         this.actionsLocator = page.locator('[col-id="actions"]');
         this.albumRows = page.locator('.ag-center-cols-container').getByRole('row');
+        this.statusFilterDropdown = page.locator("[data-ref='eFilterButton']");
+
     }
 
     async getAlbumDetails(): Promise<string> {
@@ -49,6 +52,16 @@ export class InventoryGridPage {
             })
         }
         return JSON.stringify(this.albumsDetails, null, 2);
+    }
+
+    async validateAlbumStatus(expectedStatus: string): Promise<void> {
+        const albumRowsCount = await this.albumRows.count();
+        for (let i = 0; i < albumRowsCount; i++) {
+            const statusText = await this.statusLocator.nth(i+1).textContent();
+            if (statusText !== expectedStatus) {
+                throw new Error(`Expected status "${expectedStatus}" but found "${statusText}" at row ${i + 1}`);
+            }
+        }
     }
 
 
