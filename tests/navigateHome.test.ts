@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BasePage } from '../pages/BasePage';
+import { BasePage } from '../pages/basePage';
 import { AppHomePage } from '../pages/appHomePage';
 import { AppDemosPage } from '../pages/appDemosPage';
 

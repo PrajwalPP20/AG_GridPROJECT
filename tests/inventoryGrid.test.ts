@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 import { AppDemosPage } from '../pages/appDemosPage';
-import { BasePage } from '../pages/BasePage';
+import { BasePage } from '../pages/basePage';
+import { InventoryGridPage } from '../pages/inventoryGridPage';
 
 test.describe('AG Grid Inventory Page', () => {
 
@@ -13,8 +14,8 @@ test.describe('AG Grid Inventory Page', () => {
 
         const appDemosPage = new AppDemosPage(page);
         await appDemosPage.goToInventoryPage();
-        const basePage = new BasePage(page);
-        const albumDetails: string = await basePage.getAlbumDetails();
+        const inventoryGridPage = new InventoryGridPage(page);
+        const albumDetails: string = await inventoryGridPage.getAlbumDetails();
     });
 
 });
