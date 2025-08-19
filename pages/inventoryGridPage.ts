@@ -55,11 +55,14 @@ export class InventoryGridPage {
     }
 
     async validateAlbumStatus(expectedStatus: string): Promise<void> {
+
         const albumRowsCount = await this.albumRows.count();
         for (let i = 0; i < albumRowsCount; i++) {
             const statusText = await this.statusLocator.nth(i+1).textContent();
-            if (statusText !== expectedStatus) {
-                throw new Error(`Expected status "${expectedStatus}" but found "${statusText}" at row ${i + 1}`);
+            if (statusText === expectedStatus) {   
+                console.log(`Row ${i + 1} has the expected status: ${statusText}`);
+            }else {
+                throw new Error(`Expected status "${expectedStatus}" not found in row ${i + 1}. Found: "${statusText}"`);
             }
         }
     }
