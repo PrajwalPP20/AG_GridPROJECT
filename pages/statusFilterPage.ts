@@ -18,7 +18,9 @@ export class StatusFilterPage {
         await inventoryGridPage.statusFilterDropdown.click();
         const statusFilterPage = new StatusFilterPage(this.page);
         await statusFilterPage.filterSearchBar.fill(status);
-        await statusFilterPage.filterSearchBar.press('Enter');
+        await statusFilterPage.filterSearchBar.press('Enter', { delay: 1000 });
+        await this.page.keyboard.press('Escape'); // Close the filter dropdown
+        await inventoryGridPage.validateAlbumStatus(status);
     }
 
 
